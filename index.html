@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ 
+<head>
+    <script src="auth-guard.js"></script>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhamama Pty Ltd </title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Bhamam Pty LTD,">
+
+</head>
+
+<body>
+    <div class="container">
+
+                <header>
+                    <a href="index.html" aria-label="Bhamama home">
+                        <img src="LOGO.jpeg" class="logo" alt="">
+                    </a>
+                </header>
+
+                        <nav aria-label="Main navigation">
+                            <ul>
+                                <li><a href="index.html" aria-current="page">HOME</a></li>
+                                <li><a href="menu.html">MENU</a></li>
+                                <li><a href="about.html">ABOUT</a></li>
+                                <li><a href="catering.html">CATERING</a></li>
+                                <li><a href="voucher.html">GIFT VOUCHER</a></li>
+                                <li><a href="contacts.html">CONTACTS</a></li>
+                                <li>
+                                    <button id="cart-toggle" aria-label="View cart, 0 items" aria-haspopup="dialog">
+                                        🛒 <span id="cart-count">0</span>
+                                        <li id="auth-nav-item"></li>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    <div class="cup-hero" id="cup-hero">
+                        <div class="floating-beans" aria-hidden="true">
+                            <img class="bean bean-1" src="coffee-cup-clipart-design-illustration-free-png.webp" alt="">
+                            <img class="bean bean-2" src="coffee-cup-clipart-design-illustration-free-png.webp" alt="">
+                            <img class="bean bean-3" src="coffee-cup-clipart-design-illustration-free-png.webp" alt="">
+                            <img class="bean bean-4" src="coffee-cup-clipart-design-illustration-free-png.webp" alt="">
+                        
+                        </div>
+
+                            <div class="cup-hero-content">
+                                <p class="eyebrow">Specialty Coffee</p>
+                                <h1>Made to Move</h1>
+                                <p class="tagline">Single Origin. Slow Roasted. Small Batch.</p>
+                                <a href="menu.html" class="cta-btn">Find Our Menu</a>
+                            </div>
+
+        <img class="hero-cup" src="coffee-cup-bhamama.png" alt="">
+    </div>
+
+        <main>
+            <h1>Ndaa Hallo Avuxeni Dumela Molo Sawubona</h1>
+            <p>Welcome to our store!
+                Bhamama is a coffee-first food and beverage company born out of Clarkville. Our name comes from brown sugar the very product our grandparents sold to the Clarkville community in the 1980s, measured out mug by mug. That same mug now inspires our coffee culture: warm, honest, and made for sharing. While coffee is at the heart of what we do, Bhamama also brings quality food and beverages to Clarkville and beyond, carrying forward a legacy of care that started decades ago.
+            </p>
+            <a href="http://www.google.com" target="_blank">MAKE RESERVATION</a>
+
+        </main>
+                <div id="cart-panel" class="cart-panel" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+                    <button id="cart-close" aria-label="Close cart">×</button>
+                    <h2>Your Cart</h2>
+                    <ul id="cart-items"></ul>
+                    <p id="cart-total">Total: R0.00</p>
+                </div>
+                <div id="cart-announcer" class="sr-only" aria-live="polite"></div>
+
+        <footer></footer>
+    </div>
+        <script src="cart.js"></script>
+        <script src="hero.js"></script>
+        <script src="auth.js"></script>
+</body>
+
+</html>
