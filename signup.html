@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bhamama Pty Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+    <div class="auth-split">
+        <div class="auth-card-wrap">
+            <a href="index.html" class="auth-logo-link">
+                <img src="LOGO.jpeg" alt="Bhamama" class="auth-logo">
+            </a>
+            <div class="auth-card">
+                <h1>Create Account</h1>
+                <form id="signup-form" class="auth-form">
+                    <label for="identifier" class="sr-only">Email or Phone Number</label>
+                    <input type="text" id="identifier" name="identifier" placeholder="Email or Phone Number" required autocomplete="username">
+
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password (min 8 characters)" required minlength="8" autocomplete="new-password">
+
+                    <p id="signup-error" class="form-error" role="alert"></p>
+
+                    <button type="submit" class="pill-btn">SIGN UP</button>
+                </form>
+                <p class="auth-switch">Already a member? <a href="login.html">Log in</a></p>
+            </div>
+        </div>
+
+        <div class="auth-visual">
+            <div class="auth-circle auth-circle-lg"></div>
+            <div class="auth-circle auth-circle-sm"></div>
+            <img src="images/coffee-cup.png" alt="" class="auth-cup" aria-hidden="true">
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        if (localStorage.getItem('bhamama_token')) {
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const identifier = document.getElementById('identifier').value.trim();
+            const password = document.getElementById('password').value;
+            const errorEl = document.getElementById('signup-error');
+            errorEl.textContent = '';
+
+            try {
+                await signup(identifier, password);
+                window.location.href = 'index.html';
+            } catch (err) {
+                errorEl.textContent = err.message;
+            }
+        });
+    </script>
+</body>
+</html>

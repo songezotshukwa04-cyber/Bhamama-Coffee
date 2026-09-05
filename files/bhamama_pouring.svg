@@ -1,0 +1,37 @@
+<svg width="680" height="440" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg">
+<rect width="680" height="440" fill="#FFFFFF"/>
+<circle cx="340" cy="155" r="105" fill="#F2E3CE"/>
+
+<path d="M245 210 Q290 235 340 240 Q390 235 435 210" fill="none" stroke="#7A8C4A" stroke-width="9" stroke-linecap="round"/>
+<rect x="257" y="195" width="9" height="16" rx="2" fill="#8FA05C" transform="rotate(25 261 203)"/>
+<rect x="285" y="217" width="9" height="16" rx="2" fill="#8FA05C" transform="rotate(12 289 225)"/>
+<rect x="315" y="228" width="9" height="16" rx="2" fill="#8FA05C" transform="rotate(3 319 236)"/>
+<rect x="352" y="228" width="9" height="16" rx="2" fill="#8FA05C" transform="rotate(-3 356 236)"/>
+<rect x="382" y="217" width="9" height="16" rx="2" fill="#8FA05C" transform="rotate(-12 386 225)"/>
+<rect x="410" y="195" width="9" height="16" rx="2" fill="#8FA05C" transform="rotate(-25 414 203)"/>
+<path d="M250 200 Q235 185 232 165" stroke="#6B8C3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M430 200 Q445 185 448 165" stroke="#6B8C3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+<circle cx="340" cy="155" r="105" fill="none" stroke="#8B5A2B" stroke-width="3"/>
+<circle cx="340" cy="155" r="95" fill="none" stroke="#8B5A2B" stroke-width="1"/>
+
+<g transform="rotate(-35 320 130)">
+<path d="M290 100 L290 145 Q290 160 307 160 L345 160 Q362 160 362 145 L362 100 Z" fill="#A9744A"/>
+<path d="M362 110 Q385 110 385 128 Q385 146 362 142" fill="none" stroke="#A9744A" stroke-width="8"/>
+<path d="M290 100 Q298 92 305 100 Q312 92 319 100 Q326 92 333 100 Q340 92 347 100 Q353 94 350 102 L290 100 Z" fill="#C98A4B"/>
+</g>
+
+<circle cx="270" cy="185" r="4" fill="#C98A4B"/>
+<circle cx="258" cy="200" r="3.5" fill="#8B5A2B"/>
+<circle cx="248" cy="218" r="4" fill="#C98A4B"/>
+<circle cx="238" cy="235" r="3" fill="#8B5A2B"/>
+<circle cx="232" cy="252" r="3.5" fill="#C98A4B"/>
+
+<ellipse cx="222" cy="268" rx="22" ry="9" fill="#C98A4B"/>
+<ellipse cx="215" cy="264" rx="10" ry="5" fill="#8B5A2B" opacity="0.6"/>
+
+<text x="340" y="315" text-anchor="middle" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#6B4226" letter-spacing="2">Bhamama</text>
+<rect x="260" y="333" width="160" height="3" rx="1.5" fill="#C98A4B"/>
+<text x="340" y="363" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#8B7355" letter-spacing="3">BROWN SUGAR &#8226; SINCE THE 1980S</text>
+<text x="340" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#A89478" letter-spacing="2" font-style="italic">measured by the mug, made with love</text>
+</svg>

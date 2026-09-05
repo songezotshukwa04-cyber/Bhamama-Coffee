@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts - Bhamama Pty Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Contact Bhamama Pty Ltd">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" aria-label="Bhamama home">
+                <img src="LOGO.jpeg" class="logo" alt="">
+            </a>
+        </header>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="catering.html">CATERING</a></li>
+                <li><a href="voucher.html">GIFT VOUCHER</a></li>
+                <li><a href="contacts.html" aria-current="page">CONTACTS</a></li>
+                <li>
+                    <button id="cart-toggle" aria-label="View cart, 0 items" aria-haspopup="dialog">
+                        🛒 <span id="cart-count">0</span>
+                    </button>
+                </li>
+                <li id="auth-nav-item"></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Reach out on any of these:</p>
+
+            <ul class="social-links">
+                <li>
+                    <a href="https://wa.me/27638160338" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp, 063 816 0338">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        <span>WhatsApp: 063 816 0338</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/YOUR_PAGE_NAME" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                        <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+27638160338" aria-label="Call us at 063 816 0338">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>Call: 063 816 0338</span>
+                    </a>
+                </li>
+            </ul>
+        </main>
+
+        <div id="cart-panel" class="cart-panel" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+            <button id="cart-close" aria-label="Close cart">×</button>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: R0.00</p>
+        </div>
+        <div id="cart-announcer" class="sr-only" aria-live="polite"></div>
+
+        <footer class="site-footer">
+            <div class="footer-columns">
+                <div class="footer-col footer-brand">
+                    <img src="LOGO.jpeg" class="footer-logo" alt="Bhamama logo">
+                    <p>Measured by the mug, made with love. Brown Sugar &bull; Since the 1980s.</p>
+                    <p class="footer-tagline">Born in Clarkville. Coffee-first, always.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="catering.html">Catering</a></li>
+                        <li><a href="voucher.html">Gift Voucher</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="contacts.html">Get in Touch</a></li>
+                        <li><a href="mailto:hello@bhamama.co.za">hello@bhamama.co.za</a></li>
+                        <li><a href="tel:+27638160338">063 816 0338</a></li>
+                        <li>Clarkville, Eastern Cape</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Bhamama on Instagram">
+                            <img src="instagram-icon.svg" alt="" width="24" height="24">
+                        </a>
+                        <a href="#" aria-label="Bhamama on Facebook">
+                            <img src="facebook-icon.svg" alt="" width="24" height="24">
+                        </a>
+                        <a href="#" aria-label="Bhamama on TikTok">
+                            <img src="tiktok-icon.svg" alt="" width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bhamama Pty Ltd. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="cart.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

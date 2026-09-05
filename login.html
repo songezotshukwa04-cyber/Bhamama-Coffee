@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bhamama Pty Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+    <div class="auth-split">
+        <div class="auth-card-wrap">
+            <a href="index.html" class="auth-logo-link">
+                <img src="LOGO.jpeg" alt="Bhamama" class="auth-logo">
+            </a>
+                <div class="auth-card">
+                    <h1>Login Now</h1>
+                    <form id="login-form" class="auth-form">
+                        <label for="identifier" class="sr-only">Email or Phone Number</label>
+                        <input type="text" id="identifier" name="identifier" placeholder="Email or Phone Number" required autocomplete="username">
+
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+
+                        <p id="login-error" class="form-error" role="alert"></p>
+
+                        <button type="submit" class="pill-btn">LOGIN</button>
+                    </form>
+                </div>
+                    <p class="auth-switch">Not a member? <a href="signup.html">Sign up now</a></p>
+        </div>
+
+        <div class="auth-visual">
+            <div class="auth-circle auth-circle-lg"></div>
+            <div class="auth-circle auth-circle-sm"></div>
+            <img src="images/coffee-cup.png" alt="" class="auth-cup" aria-hidden="true">
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // If already logged in, skip straight to the site
+        if (localStorage.getItem('bhamama_token')) {
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const identifier = document.getElementById('identifier').value.trim();
+            const password = document.getElementById('password').value;
+            const errorEl = document.getElementById('login-error');
+            errorEl.textContent = '';
+
+            try {
+                await login(identifier, password);
+                window.location.href = 'index.html';
+            } catch (err) {
+                errorEl.textContent = err.message;
+            }
+        });
+    </script>
+</body>
+</html>

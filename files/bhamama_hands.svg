@@ -1,0 +1,33 @@
+<svg width="680" height="440" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg">
+<rect width="680" height="440" fill="#FFFFFF"/>
+<circle cx="340" cy="155" r="105" fill="#F2E3CE"/>
+
+<path d="M255 195 Q290 225 340 230 Q390 225 425 195" fill="none" stroke="#7A8C4A" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+
+<circle cx="340" cy="155" r="105" fill="none" stroke="#8B5A2B" stroke-width="3"/>
+<circle cx="340" cy="155" r="95" fill="none" stroke="#8B5A2B" stroke-width="1"/>
+
+<path d="M255 175 Q245 190 250 210 Q253 222 265 225 L280 200 Q285 185 280 172 Q272 162 255 175 Z" fill="#A9744A"/>
+<path d="M265 225 Q275 235 290 233 L300 205 Q292 195 280 200 Z" fill="#A9744A"/>
+
+<path d="M425 175 Q435 190 430 210 Q427 222 415 225 L400 200 Q395 185 400 172 Q408 162 425 175 Z" fill="#A9744A"/>
+<path d="M415 225 Q405 235 390 233 L380 205 Q388 195 400 200 Z" fill="#A9744A"/>
+
+<path d="M303 118 L303 163 Q303 178 320 178 L358 178 Q375 178 375 163 L375 118 Z" fill="#A9744A"/>
+<path d="M375 128 Q398 128 398 146 Q398 164 375 160" fill="none" stroke="#A9744A" stroke-width="8"/>
+
+<path d="M303 118 Q311 106 320 116 Q329 104 338 116 Q347 104 356 116 Q365 104 374 116 Q380 108 375 118 Z" fill="#C98A4B"/>
+<circle cx="317" cy="110" r="3" fill="#8B5A2B"/>
+<circle cx="331" cy="106" r="3" fill="#8B5A2B"/>
+<circle cx="345" cy="108" r="3" fill="#8B5A2B"/>
+<circle cx="359" cy="106" r="3" fill="#8B5A2B"/>
+<circle cx="368" cy="111" r="3" fill="#8B5A2B"/>
+
+<rect x="312" y="138" width="66" height="3" fill="#8B5A2B" opacity="0.5"/>
+<rect x="312" y="153" width="66" height="3" fill="#8B5A2B" opacity="0.5"/>
+
+<text x="340" y="315" text-anchor="middle" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#6B4226" letter-spacing="2">Bhamama</text>
+<rect x="260" y="333" width="160" height="3" rx="1.5" fill="#C98A4B"/>
+<text x="340" y="363" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#8B7355" letter-spacing="3">BROWN SUGAR &#8226; SINCE THE 1980S</text>
+<text x="340" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#A89478" letter-spacing="2" font-style="italic">measured by the mug, made with love</text>
+</svg>
