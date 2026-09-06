@@ -29,7 +29,7 @@
 
                     <p id="signup-error" class="form-error" role="alert"></p>
 
-                    <button type="submit" class="pill-btn">SIGN UP</button>
+                    <button type="submit" id="signup-submit-btn" class="pill-btn">SIGN UP</button>
                 </form>
                 <p class="auth-switch">Already a member? <a href="login.html">Log in</a></p>
             </div>
@@ -48,8 +48,12 @@
             window.location.href = 'index.html';
         }
 
+        const submitBtn = document.getElementById('signup-submit-btn');
+        const originalBtnText = submitBtn.textContent;
+
         document.getElementById('signup-form').addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const name = document.getElementById('name').value.trim();
             const identifier = document.getElementById('identifier').value.trim();
             const password = document.getElementById('password').value;
@@ -62,11 +66,16 @@
                 return;
             }
 
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SIGNING UP...';
+
             try {
                 await signup(name, identifier, password);
                 window.location.href = 'index.html';
             } catch (err) {
                 errorEl.textContent = err.message;
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
             }
         });
     </script>
