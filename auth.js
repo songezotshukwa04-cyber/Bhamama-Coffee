@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://bhamama-coffee.onrender.com';
 
 function saveSession(token, identifier) {
     localStorage.setItem('bhamama_token', token);
@@ -14,26 +14,44 @@ function getToken() {
     return localStorage.getItem('bhamama_token');
 }
 
-async function signup(identifier, password) {
-    const res = await fetch(`${API_BASE}/api/signup`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ identifier, password })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Signup failed.');
+// Shared helper: does the fetch, and turns any failure mode (network down,
+// non-JSON response, unexpected server error) into a friendly Error message.
+async function authRequest(path, body) {
+    let res;
+    try {
+        res = await fetch(`${API_BASE}${path}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+        });
+    } catch (networkErr) {
+        // fetch() itself threw - server unreachable, no internet, CORS block, etc.
+        throw new Error('Could not reach the server. Please check your connection and try again.');
+    }
+
+    let data;
+    try {
+        data = await res.json();
+    } catch (parseErr) {
+        // Response wasn't valid JSON (e.g. Render error page, HTML, empty body)
+        throw new Error('Unexpected response from the server. Please try again shortly.');
+    }
+
+    if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+    }
+
+    return data;
+}
+
+async function signup(name, identifier, password) {
+    const data = await authRequest('/api/signup', { name, identifier, password });
     saveSession(data.token, data.identifier);
     return data;
 }
 
 async function login(identifier, password) {
-    const res = await fetch(`${API_BASE}/api/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ identifier, password })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Login failed.');
+    const data = await authRequest('/api/login', { identifier, password });
     saveSession(data.token, data.identifier);
     return data;
 }
