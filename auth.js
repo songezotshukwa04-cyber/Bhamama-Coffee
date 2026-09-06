@@ -1,13 +1,17 @@
 const API_BASE = 'https://bhamama-coffee.onrender.com';
 
-function saveSession(token, identifier) {
+function saveSession(token, identifier, name) {
     localStorage.setItem('bhamama_token', token);
     localStorage.setItem('bhamama_identifier', identifier);
+    if (name) {
+        localStorage.setItem('bhamama_name', name);
+    }
 }
 
 function clearSession() {
     localStorage.removeItem('bhamama_token');
     localStorage.removeItem('bhamama_identifier');
+    localStorage.removeItem('bhamama_name');
 }
 
 function getToken() {
@@ -25,7 +29,6 @@ async function authRequest(path, body) {
             body: JSON.stringify(body)
         });
     } catch (networkErr) {
-        // fetch() itself threw - server unreachable, no internet, CORS block, etc.
         throw new Error('Could not reach the server. Please check your connection and try again.');
     }
 
@@ -33,7 +36,6 @@ async function authRequest(path, body) {
     try {
         data = await res.json();
     } catch (parseErr) {
-        // Response wasn't valid JSON (e.g. Render error page, HTML, empty body)
         throw new Error('Unexpected response from the server. Please try again shortly.');
     }
 
@@ -44,15 +46,15 @@ async function authRequest(path, body) {
     return data;
 }
 
-async function signup(name, identifier, password) {
-    const data = await authRequest('/api/signup', { name, identifier, password });
-    saveSession(data.token, data.identifier);
+async function signup(name, identifier, address, password) {
+    const data = await authRequest('/api/signup', { name, identifier, address, password });
+    saveSession(data.token, data.identifier, data.name);
     return data;
 }
 
 async function login(identifier, password) {
     const data = await authRequest('/api/login', { identifier, password });
-    saveSession(data.token, data.identifier);
+    saveSession(data.token, data.identifier, data.name);
     return data;
 }
 
@@ -67,10 +69,12 @@ function renderAuthNav() {
     if (!slot) return;
 
     const identifier = localStorage.getItem('bhamama_identifier');
+    const name = localStorage.getItem('bhamama_name');
+
     if (identifier) {
         const greeting = document.createElement('span');
         greeting.style.cssText = 'color:white; font-size:14px; padding: 0 8px;';
-        greeting.textContent = `Hi, ${identifier}`;
+        greeting.textContent = `Hi, ${name || identifier}`;
 
         const logoutBtn = document.createElement('button');
         logoutBtn.id = 'logout-btn';
