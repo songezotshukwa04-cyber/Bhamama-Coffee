@@ -660,6 +660,7 @@ a {
     border-radius: 30px;
     border: 1px solid #e0d3bf;
     background-color: #f9f4ec;
+    color: #000000;
     font-size: 15px;
     min-height: 44px;
 }
@@ -757,5 +758,57 @@ a {
     .auth-visual {
         min-height: 240px;
         order: -1;
+    }
+}
+/* ---- Mobile nav toggle (hamburger menu) ---- */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    nav ul.nav-open {
+        display: flex;
+    }
+
+    nav li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        width: 100%;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
