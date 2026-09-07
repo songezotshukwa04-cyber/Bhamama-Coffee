@@ -3,7 +3,6 @@
 
  
 <head>
-    <script src="auth-guard.js"></script>
     <meta charset="UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +22,8 @@
                 </header>
 
                         <nav aria-label="Main navigation">
-                            <ul>
+                            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-list">☰</button>
+                            <ul id="main-nav-list">
                                 <li><a href="index.html" aria-current="page">HOME</a></li>
                                 <li><a href="menu.html">MENU</a></li>
                                 <li><a href="about.html">ABOUT</a></li>
@@ -59,7 +59,7 @@
     </div>
 
         <main>
-            <p class="greeting-strip">Ndaa &bull; Hallo &bull; Avuxeni &bull; Dumela &bull; Molo &bull; Sawubona</p>
+            <p class="greeting-strip">Ndaa &bull; Hallo &bull; Avuxeni &bull; Dumela &bull; Molo &bull; Sawubona &bull; Lotjha</p>
                 <h2>Welcome to our store!</h2>
             <p>
                 Bhamama is a coffee-first food and beverage company born out of Clarkville. Our name comes from brown sugar the very product our grandparents sold to the Clarkville community in the 1980s, measured out mug by mug. That same mug now inspires our coffee culture: warm, honest, and made for sharing. While coffee is at the heart of what we do, Bhamama also brings quality food and beverages to Clarkville and beyond, carrying forward a legacy of care that started decades ago.
@@ -71,6 +71,24 @@
                     <h2>Your Cart</h2>
                     <ul id="cart-items"></ul>
                     <p id="cart-total">Total: R0.00</p>
+
+                    <div class="checkout-fields">
+                        <label for="delivery-address" style="color:white; font-size:14px; display:block; margin-top:16px;">Delivery Address</label>
+                        <input type="text" id="delivery-address" name="delivery-address" placeholder="Where should we deliver?" style="width:100%; padding:10px; border-radius:6px; border:1px solid rgba(255,255,255,0.3); background-color:rgba(0,0,0,0.4); color:white; font-size:14px; margin-top:6px; box-sizing:border-box;">
+
+                        <label style="color:white; font-size:14px; display:block; margin-top:16px;">Payment Method</label>
+                        <div style="display:flex; gap:16px; margin-top:6px;">
+                            <label style="color:white; font-size:14px; display:flex; align-items:center; gap:6px;">
+                                <input type="radio" name="payment-method" value="cash" checked> Cash
+                            </label>
+                            <label style="color:white; font-size:14px; display:flex; align-items:center; gap:6px;">
+                                <input type="radio" name="payment-method" value="card"> Card
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="place-order-btn" class="add-to-cart" style="width:100%; margin-top:16px;">Place Order</button>
+                    <p id="order-message" class="form-error" role="alert"></p>
                 </div>
                 <div id="cart-announcer" class="sr-only" aria-live="polite"></div>
 
@@ -125,9 +143,10 @@
 
         </footer>
     </div>
+        <script src="nav-toggle.js"></script>
+        <script src="auth.js"></script>
         <script src="cart.js"></script>
         <script src="hero.js"></script>
-        <script src="auth.js"></script>
 </body>
 
 </html>
